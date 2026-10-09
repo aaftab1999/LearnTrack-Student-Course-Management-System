@@ -41,4 +41,11 @@ public class Student extends Person {
         this.active = active;
     }
 
+    @Override
+    public String toString() {
+        return "Student [batch=" + batch + ", active=" + active + ", Id=" + getId() + ", Batch=" + getBatch()
+                + ", First Name=" + getFirstName() + ", is active=" + isActive() + ", last name="
+                + getLastName() + ", email=" + getEmail() + "]";
+    }
+
 }
