@@ -22,7 +22,7 @@ public class Student extends Person {
 
     @Override
     public String getDisplayName() {
-        return "Student - First Name : " + getFirstName() + " Last Name : " + getLastName();
+        return "Name : " + getFirstName() + " " + getLastName();
     }
 
     public String getBatch() {
@@ -43,7 +43,7 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student [batch=" + batch + ", active=" + active + ", Id=" + getId() + ", Batch=" + getBatch()
+        return "Student [Active=" + active + ", Id=" + getId() + ", Batch=" + getBatch()
                 + ", First Name=" + getFirstName() + ", is active=" + isActive() + ", last name="
                 + getLastName() + ", email=" + getEmail() + "]";
     }

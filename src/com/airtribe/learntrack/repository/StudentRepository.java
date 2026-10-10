@@ -10,6 +10,7 @@ public class StudentRepository {
 
     public void addStudent(Student student) {
         students.add(student);
+        System.out.println("New student added with Id : " + student.getId() + " Name : " + student.getDisplayName());
     }
 
     public void addStudent(List<Student> students) {
