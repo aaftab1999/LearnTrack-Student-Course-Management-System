@@ -64,4 +64,10 @@ public class Enrollment {
         this.enrollmentStatus = enrollmentStatus;
     }
 
+    @Override
+    public String toString() {
+        return "Enrollment [id=" + id + ", studentId=" + studentId + ", courseId=" + courseId + ", enrollmentDate="
+                + enrollmentDate + ", enrollmentStatus=" + enrollmentStatus + "]";
+    }
+
 }

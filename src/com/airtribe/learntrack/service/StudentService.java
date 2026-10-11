@@ -16,19 +16,21 @@ public class StudentService {
 
     public void addStudent(Student student) {
         studentRepository.addStudent(student);
+        System.out.println(
+                "SERVICE -> New student added with Id : " + student.getId() + " Name : " + student.getDisplayName());
     }
 
-    public void deactivateStudent(Student deactivateStudent) throws EntityNotFoundException {
+    public void deactivateStudent(int deactivateStudent) throws EntityNotFoundException {
         List<Student> students = studentRepository.listStudents();
 
         for (Student student : students) {
-            if (student.getId() == deactivateStudent.getId()) {
+            if (student.getId() == deactivateStudent) {
                 student.setActive(false);
                 break;
             }
         }
         throw new EntityNotFoundException(
-                "Deactivation failed - The requested Student doesn't exist :" + deactivateStudent.toString());
+                "Deactivation failed - The requested Student Id doesn't exist :" + deactivateStudent);
     }
 
     public void updateStudent(Student updateStudent) throws EntityNotFoundException {
@@ -66,9 +68,11 @@ public class StudentService {
         List<Student> students = studentRepository.listStudents();
         for (Student student : students) {
             if (student.getId() == id) {
+                System.out.println("SERVICE -> Student found by Id " + id);
+                System.out.println("Student : " + student);
                 return student;
             }
         }
-        throw new EntityNotFoundException("Entity not found for Id -" + id);
+        throw new EntityNotFoundException("Student Entity not found for Id :" + id);
     }
 }
